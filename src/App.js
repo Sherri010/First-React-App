@@ -16,23 +16,28 @@ class App extends Component {
         this.setState({
         projects :[{
           title:"My portfolio",
-          deadline:" March 2016"
+          category:" March 2016"
         },{
           title:"Event Planner",
-          deadline:"April"
+          category:"April"
         },{
           title:"Airplanner",
-          deadline:"July"
+          category:"July"
         }
        ]})
     }
 
+handleAddProject(project){
+  let projects = this.state.projects;
+  projects.push(project);
+  this.setState(projects:projects);
+}
   render() {
     return (
       <div className="App">
         Project Management
         <Projects projects={this.state.projects}/>
-        <AddProject />
+        <AddProject addProject={this.handleAddProject.bind(this)}/>
       </div>
     );
   }

@@ -13,7 +13,17 @@ class AddProject extends Component {
 
   handleSubmit(e){
        e.preventDefault();
-    console.log(this.refs.title.value);
+    if(this.refs.title.value === ""){
+      alert("no empty")
+    }else{
+      this.setState({newProject:{
+        title:this.refs.title.value,
+        category:this.refs.category.value
+      }},function(){
+        this.props.addProject(this.state.newProject);
+      }
+    )
+    }
 
   }
 
