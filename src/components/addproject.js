@@ -52,4 +52,8 @@ class AddProject extends Component {
     )}
 }
 
+AddProject.propTypes ={
+  category : React.PropTypes.string,
+  onDelete : React.PropTypes.func
+}
 export default AddProject;
